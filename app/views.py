@@ -247,7 +247,7 @@ def sort():
                 "confident score": 0})
 
 @app.route('/interface', methods=['POST'])
-def interface()
+def interface():
     render_template('interface.html')
     city = request.form.get('city')
     county = request.form.get('county')

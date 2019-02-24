@@ -30,7 +30,9 @@
             <input type="text" name="State" id="state"><br>
             Describe material:<br>
             <input type="text" name="Material" id="material"><br>
-            <button class="waves-effect waves-light btn" type="submit">Submit</button>
+            <div class="btn-div">
+                <button class="waves-effect waves-light btn" type="submit">Submit</button>
+            </div>
           </form>
       </div>
 
@@ -39,12 +41,14 @@
               <strong>Upload image:</strong><br>
               <input id="file-picker" type="file" name="file" accept="image/*">
               <div id="msg"></div>
-              <input type="submit" value="Upload!" id="upload-button">
+              <div class="btn-div">
+                  <button class="waves-effect waves-light btn" type="submit">Submit</button>
+              </div>
           </form>
       </div>
 
-      <div class="btn-div">
-          <button class="waves-effect waves-light btn" type="submit">Submit</button>
-      </div>
+      <div id="recyclingInfo"></div>
+
+
 
 </body>

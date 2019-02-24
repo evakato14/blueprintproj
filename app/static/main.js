@@ -33,6 +33,7 @@ $(document).ready(function() {
 			url : '/retrieve'
 		})
 		.done(function(data) {
+            console.log(data);
 			$('#recyclingInfo').text(data).show();
 		});
 		event.preventDefault();

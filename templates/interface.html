@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <title>enter to db</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+          <br>
+      <form>
+  <div class="form-group">
+    <label>City</label>
+    <input class="form-control" id="city">
+  </div>
+  <div class="form-group">
+    <label>County</label>
+    <input class="form-control" id="county">
+  </div>
+  <div class="form-group">
+    <label>State</label>
+    <input class="form-control" id="state">
+  </div>
+  <div class="form-group">
+    <label>Metals</label>
+    <input class="form-control" id="metals">
+  </div>
+  <div class="form-group">
+    <label>Metals Info</label>
+    <input class="form-control" id="metalsInfo">
+  </div>
+  <div class="form-group">
+    <label>Plastics</label>
+    <input class="form-control" id="plastics">
+  </div>
+  <div class="form-group">
+    <label>Plastics Info</label>
+    <input class="form-control" id="plasticsInfo">
+  </div>
+  <div class="form-group">
+    <label>Paper</label>
+    <input class="form-control" id="paper">
+  </div>
+  <div class="form-group">
+    <label>Paper Info</label>
+    <input  class="form-control" id="paperInfo">
+  </div>
+  <div class="form-group">
+    <label>Glass</label>
+    <input  class="form-control" id="glass">
+  </div>
+  <div class="form-group">
+    <label>Glass Info</label>
+    <input  class="form-control" id="glassInfo">
+  </div>
+  <div class="form-group">
+    <label>Other</label>
+    <input  class="form-control" id="other">
+  </div>
+  <div class="form-group">
+    <label>Other Info</label>
+    <input  class="form-control" id="otherInfo">
+  </div>
+
+  <button type="submit" class="btn btn-primary">Submit</button>
+</form>
+</container>
+
+<script>
+$(document).ready(function() {
+
+	$('form').on('submit', function(event) {
+        console.log("Triggered")
+    	$.ajax({
+			data : {
+				city : document.getElementById("city").value,
+                county : document.getElementById("county").value,
+                state : document.getElementById("state").value,
+                metals : document.getElementById("metals").value,
+                metals_info : document.getElementById("metalsInfo").value,
+                plastics : document.getElementById("plastics").value,
+                plastics_info : document.getElementById("plasticsInfo").value,
+                paper : document.getElementById("paper").value,
+                paper_info : document.getElementById("paper").value,
+                glass : document.getElementById("glass").value,
+                glass_info : document.getElementById("glassInfo").value,
+                other : document.getElementById("other").value,
+                other_info : document.getElementById("otherInfo").value,
+			},
+			type : 'POST',
+			url : '/retrieve'
+		})
+		event.preventDefault();
+	})
+});
+</script>
+
+  </body>
+</html>

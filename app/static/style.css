@@ -1,4 +1,25 @@
 h1 {
     text-align: center;
-    outline: 2px solid #35b1b7;
+    outline: 2px solid #88b337;
+    padding-bottom: 5px;
+    color: #88b337;
+}
+
+#imageUpload {
+    visibility: hidden;
+    display: none;
+}
+
+#type-in {
+    visibility: visible;
+    display: block;
+}
+
+#toText {
+    visibility: hidden;
+    display: none;
+}
+
+.btn-div {
+    text-align: center;
 }

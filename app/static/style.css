@@ -1,0 +1,22 @@
+h1 {
+    text-align: center;
+}
+.button{
+  background-color: 33cc33;
+  color: white;
+  border-radius: 8px;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+
+
+/*body {
+	background-color: #;
+	border: 20 px;
+}*/

@@ -22,6 +22,7 @@ function text() {
 
 $(document).ready(function() {
     $('form').on('submit', function(event) {
+      console.log("Yay")
     	$.ajax({
 			data : {
                 city : document.getElementById("city").value,
@@ -30,7 +31,7 @@ $(document).ready(function() {
                 material : document.getElementById("material").value
 			},
 			type : 'POST',
-			url : '/process'
+			url : '/retrieve'
 		})
 		.done(function(data) {
 			$('#recyclingInfo').text(data).show();

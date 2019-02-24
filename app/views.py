@@ -144,9 +144,10 @@ def sort():
             {"status code": 500, "result": "Not an image",
                 "confident score": 0})
 
-@app.route('/interface', methods=['POST'])
-def interface()
-    render_template('interface.html')
+@app.route('/interface', methods=['GET', 'POST'])
+def interface():
+    if request.method == "GET":
+        return render_template('interface.html')
     city = request.form.get('city')
     county = request.form.get('county')
     state = request.form.get('state')

@@ -27,12 +27,20 @@
     <input class="form-control" id="metals">
   </div>
   <div class="form-group">
+    <label>No Metals</label>
+    <input class="form-control" id="nometals">
+  </div>
+  <div class="form-group">
     <label>Metals Info</label>
     <input class="form-control" id="metalsInfo">
   </div>
   <div class="form-group">
     <label>Plastics</label>
     <input class="form-control" id="plastics">
+  </div>
+  <div class="form-group">
+    <label>No Plastics</label>
+    <input class="form-control" id="noplastics">
   </div>
   <div class="form-group">
     <label>Plastics Info</label>
@@ -43,12 +51,20 @@
     <input class="form-control" id="paper">
   </div>
   <div class="form-group">
+    <label>No Paper</label>
+    <input class="form-control" id="nopaper">
+  </div>
+  <div class="form-group">
     <label>Paper Info</label>
     <input  class="form-control" id="paperInfo">
   </div>
   <div class="form-group">
     <label>Glass</label>
     <input  class="form-control" id="glass">
+  </div>
+  <div class="form-group">
+    <label>No Glass</label>
+    <input  class="form-control" id="noglass">
   </div>
   <div class="form-group">
     <label>Glass Info</label>
@@ -59,8 +75,12 @@
     <input  class="form-control" id="other">
   </div>
   <div class="form-group">
+    <label>No Other</label>
+    <input  class="form-control" id="other">
+  </div>
+  <div class="form-group">
     <label>Other Info</label>
-    <input  class="form-control" id="otherInfo">
+    <input class="form-control" id="otherInfo">
   </div>
 
   <button type="submit" class="btn btn-primary">Submit</button>
@@ -78,14 +98,19 @@ $(document).ready(function() {
                 county : document.getElementById("county").value,
                 state : document.getElementById("state").value,
                 metals : document.getElementById("metals").value,
+                nometals : document.getElementById("nometals").value,
                 metals_info : document.getElementById("metalsInfo").value,
                 plastics : document.getElementById("plastics").value,
+                noplastics : document.getElementById("noplastics").value,
                 plastics_info : document.getElementById("plasticsInfo").value,
                 paper : document.getElementById("paper").value,
-                paper_info : document.getElementById("paper").value,
+                nopaper : document.getElementById("nopaper").value,
+                paper_info : document.getElementById("paperInfo").value,
                 glass : document.getElementById("glass").value,
+                noglass : document.getElementById("noglass").value,
                 glass_info : document.getElementById("glassInfo").value,
                 other : document.getElementById("other").value,
+                noother : document.getElementById("noother").value,
                 other_info : document.getElementById("otherInfo").value,
 			},
 			type : 'POST',

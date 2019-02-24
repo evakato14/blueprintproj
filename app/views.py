@@ -1,4 +1,5 @@
 from flask import Flask, render_template, request
+import string
 from pymongo import MongoClient
 app = Flask(__name__)
 
@@ -13,10 +14,21 @@ def render():
 def retrieve():
     city = request.form.get('city')
     county = request.form.get('county')
+    if(not city or not country):
+        return;
+    invalidChars = set(string.punctuation)
+    if any(char in invalidChars for char in word):
+        return;
+    result=db.command("db.USA.find( { \"state\":{ $regex:/^"+state+"/}, \"city\":{ $regex:/^"+city+"/} } )")
+    print(result)
 
-@app.route("/put")
-def render():
-    return render_template('index.html')
-
-if __name__ == '__main__':
-    app.run(debug=True)
+@app.route("/put", methods=['POST'])
+def put():
+    city = request.form.get('city')
+    county = request.form.get('county')
+    if(not city or not country):
+        return;
+    invalidChars = set(string.punctuation)
+    if any(char in invalidChars for char in word):
+        return;
+    result=db.command("db.USA.insert( { \"state\":\""+state+"\", \"city\":\""+city+"\" } )")

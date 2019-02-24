@@ -4,12 +4,13 @@ from pymongo import MongoClient
 import re
 from watson_developer_cloud import VisualRecognitionV3
 from watson_developer_cloud import watson_service
+from bson.json_util import dumps
 app = Flask(__name__)
 
 client = MongoClient("mongodb://blueprint:aaaabbbb@blueprint-shard-00-00-jwwbc.mongodb.net:27017,blueprint-shard-00-01-jwwbc.mongodb.net:27017,blueprint-shard-00-02-jwwbc.mongodb.net:27017/test?ssl=true&replicaSet=Blueprint-shard-0&authSource=admin&retryWrites=true")
 db=client.blueprint
 
-apikey = ''
+apikey = 'CIh7yuw-FlXdpAyMBs2cMD9mX3-8OFt53uihYIvnMO04'
 classifier_id = ''
 
 
@@ -52,16 +53,18 @@ def render():
 
 @app.route("/retrieve", methods=['POST'])
 def retrieve():
+    print("Test")
+    state = request.form.get('state')
     city = request.form.get('city')
     county = request.form.get('county')
-    if(not city or not country):
+    if(not city or not state):
         return;
     invalidChars = set(string.punctuation)
-    if any(char in invalidChars for char in word):
+    if any(char in invalidChars for char in state):
         return;
     result=db.USA.find( { "state": re.compile("^"+state), "city":re.compile("^"+city) } )
-    print(result)
-    return jsonify(result)
+    print(dumps(result))
+    return jsonify(dumps(result))
 
 
 @app.route("/put", methods=['POST'])

@@ -22,7 +22,6 @@ function text() {
 
 $(document).ready(function() {
     $('form').on('submit', function(event) {
-        alert(document.getElementById("city").value);
     	$.ajax({
 			data : {
                 city : document.getElementById("city").value,
